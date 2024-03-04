@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:touchworld_machine_test/controller/controller.dart';
@@ -80,10 +81,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                 product: value.products[index],
                               )),
                       options: CarouselOptions(
-                        initialPage: value.products.length,
+                        initialPage: 10,
+                        enlargeCenterPage: true,
+                        viewportFraction: 0.8,
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        enableInfiniteScroll: true,
                       ),
                     ),
-            )
+            ),
           ],
         ),
       ),

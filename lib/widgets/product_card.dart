@@ -25,15 +25,21 @@ class ProductCard extends StatelessWidget {
           width: 250,
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            image: DecorationImage(
-                image: product.image == null
-                    ? AssetImage(ImageConstants.productImage)
-                        as ImageProvider<Object>
-                    : NetworkImage(product.image!),
-                fit: BoxFit.cover),
-            color: ColorConstants.primaryColor,
-            borderRadius: BorderRadius.circular(20),
-          ),
+              image: DecorationImage(
+                  image: product.image == null
+                      ? AssetImage(ImageConstants.productImage)
+                          as ImageProvider<Object>
+                      : NetworkImage(product.image!),
+                  fit: BoxFit.cover),
+              color: ColorConstants.primaryColor,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: const Offset(0, 0)),
+              ]),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
